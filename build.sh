@@ -12,7 +12,8 @@ mkdir install_path
 make && make install
 '''
 cd $ETHTOOL_PATH
-./configure MNL_CFLAGS="-I $LMNL_INSTALL_PATH/include" MNL_LIBS="-L $LMNL_INSTALL_PATH/lib -lmnl" LDFLAGS=-static
+#./configure MNL_CFLAGS="-I $LMNL_INSTALL_PATH/include" MNL_LIBS="-L $LMNL_INSTALL_PATH/lib -lmnl" LDFLAGS=-static
+./configure LDFLAGS=-static
 if [ -f ethtool ]; then
 	mv ethtool ethtool_bak 
 fi
